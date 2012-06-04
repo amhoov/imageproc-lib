@@ -48,7 +48,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "cam.h"
-#include "stopwatch.h"
+#include "sclock.h"
 #include "led.h"
 
 // TODO: Read native image size from device driver, then calculate image size
@@ -381,7 +381,7 @@ void camCaptureRow(void) {
 
     // Fill and timestamp row buffer
     row_getter(row_buff->pixels, NATIVE_IMAGE_COLS);
-    row_buff->timestamp = swatchToc();
+    row_buff->timestamp = sclockGetLocalTicks();
     row_buff->row_num = cntrRead(row_counter);
 
     CRITICAL_SECTION_END;
