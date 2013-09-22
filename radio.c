@@ -54,13 +54,32 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define RADIO_DEFAULT_SRC_ADDR          (0x1101)
-#define RADIO_DEFAULT_SRC_PAN           (0x1001)
-#define RADIO_DEFAULT_CHANNEL           (0x15)
-#define RADIO_DEFAULT_HARD_RETRIES      (3)
-#define RADIO_DEFAULT_SOFT_RETRIES      (2)
-#define RADIO_DEFAULT_WATCHDOG_STATE    (0) // Default off
-#define RADIO_DEFAULT_WATCHDOG_TIME     (400000) // 400 ms timeout
+//<<<<<<< Updated upstream
+//#define RADIO_DEFAULT_SRC_ADDR          (0x1101)
+//#define RADIO_DEFAULT_SRC_PAN           (0x1001)
+//#define RADIO_DEFAULT_CHANNEL           (0x15)
+//#define RADIO_DEFAULT_HARD_RETRIES      (3)
+//#define RADIO_DEFAULT_SOFT_RETRIES      (2)
+//#define RADIO_DEFAULT_WATCHDOG_STATE    (0) // Default off
+//#define RADIO_DEFAULT_WATCHDOG_TIME     (400000) // 400 ms timeout
+//=======
+//#define RADIO_DEFAULT_SRC_ADDR                  (0x1101)
+//#define RADIO_DEFAULT_SRC_PAN                   (0x1001)
+//#define RADIO_DEFAULT_CHANNEL                   (0x15)
+//#define RADIO_DEFAULT_RETRIES                   (3)
+
+#define RADIO_DEFAULT_SRC_ADDR                  (0x0110)
+#define RADIO_DEFAULT_SRC_PAN                   (0x0000)
+#define RADIO_DEFAULT_CHANNEL                   (0x14)
+#define RADIO_DEFAULT_RETRIES                   (3)
+#define RADIO_DEFAULT_WATCHDOG_TIME             (400000) // 400 ms timeout
+
+#define RADIO_DEFAULT_PACKET_RETRIES            (2)
+#define TX_TIMEOUT_MS                           (75)
+#define WATCHDOG_TIMEOUT_MS                     (1000)
+
+#define RADIO_CALIB_PERIOD                      (300000) // 5 minutes
+//>>>>>>> Stashed changes
 
 // TODO (fgb) : Calibration is recommended in the datasheet, yet needs testing
 #define RADIO_AUTOCALIBRATE             (0)
